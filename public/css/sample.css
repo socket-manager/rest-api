@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+#filesListForMultipart, #filesListForChunked {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.file-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.file-thumb {
+    width: 300px;
+    height: auto;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.file-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+}
+
+.file-meta li {
+    margin: 0;
+    line-height: 1.2;
+}
+
+hr {
+    margin-top: 100px;
+}

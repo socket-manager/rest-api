@@ -1,0 +1,55 @@
+{
+    "name": "socket-manager/rest-api",
+    "description": "PHP製のREST-API/RESTful-APIサーバー開発環境。PSR-7準拠、ステートマシン対応、ChunkedやSSEなどの高度なAPI処理をサポート。",
+    "type": "project",
+    "support": {
+        "docs": "https://github.com/socket-manager/rest-api/"
+    },
+    "license": "MIT",
+    "keywords": [
+        "rest-api",
+        "restful-api",
+        "api-server",
+        "php-rest-api",
+        "psr-7",
+        "http-message",
+        "socket-manager",
+        "state-machine",
+        "event-driven",
+        "chunked-transfer",
+        "server-sent-events",
+        "sse",
+        "multipart-upload",
+        "range-request",
+        "cross-platform",
+        "php-framework",
+        "web-api",
+        "ipc",
+        "non-blocking",
+        "async",
+        "oauth2",
+        "streaming-api"
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lib.tech.engineer",
+            "email": "lib.tech.engineer@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "socket-manager/library": "~1.21.0",
+        "laminas/laminas-diactoros": "^3.8"
+    },
+    "repositories": {
+        "socket-manager/library": {
+            "type": "vcs",
+            "url": "https://github.com/socket-manager/library.git"
+        }
+    }
+}

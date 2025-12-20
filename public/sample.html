@@ -1,0 +1,133 @@
+<!--
+    sample.html
+
+    サンプルページ
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>REST API サンプル</title>
+    <link rel="stylesheet" href="./css/sample.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/sample.js"></script>
+</head>
+<body>
+    <h1>REST API サンプル</h1>
+
+    <hr />
+
+    <!-- GET -->
+    <h2>GET: ユーザー一覧取得</h2>
+    <form id="getForm">
+        <label>ユーザーID（任意）: <input type="text" id="getUserId"></label>
+        <button type="submit">GET 実行</button>
+    </form>
+    <pre id="getResponse"></pre>
+
+    <hr />
+
+    <!-- POST -->
+    <h2>POST: 新規ユーザー作成</h2>
+    <form id="postForm">
+        <label>名前: <input type="text" id="postName"></label><br>
+        <label>Email: <input type="text" id="postEmail"></label><br>
+        <button type="submit">POST 実行</button>
+    </form>
+    <pre id="postResponse"></pre>
+
+    <hr />
+
+    <!-- PUT -->
+    <h2>PUT: ユーザー全体更新</h2>
+    <form id="putForm">
+        <label>ID: <input type="text" id="putId"></label><br>
+        <label>名前: <input type="text" id="putName"></label><br>
+        <label>Email: <input type="text" id="putEmail"></label><br>
+        <button type="submit">PUT 実行</button>
+    </form>
+    <pre id="putResponse"></pre>
+
+    <hr />
+
+    <!-- PATCH -->
+    <h2>PATCH: ユーザー部分更新</h2>
+    <form id="patchForm">
+        <label>ID: <input type="text" id="patchId"></label><br>
+        <label>名前（任意）: <input type="text" id="patchName"></label><br>
+        <label>Email（任意）: <input type="text" id="patchEmail"></label><br>
+        <button type="submit">PATCH 実行</button>
+    </form>
+    <pre id="patchResponse"></pre>
+
+    <hr />
+
+    <!-- DELETE -->
+    <h2>DELETE: ユーザー削除</h2>
+    <form id="deleteForm">
+        <label>ID: <input type="text" id="deleteId"></label>
+        <button type="submit">DELETE 実行</button>
+    </form>
+    <pre id="deleteResponse"></pre>
+
+    <hr />
+
+    <!-- UPLOADED FILES(MULTIPART): 一覧取得・プレビュー -->
+    <h2>Multipartによるアップロード済みファイルの確認</h2>
+    <button id="listFilesBtnForMultipart">一覧取得</button>
+    <pre id="filesListForMultipart"></pre>
+
+    <hr />
+
+     <!-- MULTIPART (ファイルアップロード) -->
+    <h2>Multipart: ファイルアップロード</h2>
+    <form id="multipartForm">
+        <label>ファイル: <input type="file" id="multipartFile"></label><br>
+        <label>説明（任意）: <input type="text" id="multipartDesc"></label><br>
+        <button type="submit">アップロード</button>
+    </form>
+    <progress id="multipartProgress" value="0" max="100" style="width:300px; display:block;"></progress>
+    <pre id="multipartResponse"></pre>
+
+    <hr />
+
+    <!-- UPLOADED FILES(CHUNKED): 一覧取得・プレビュー -->
+    <h2>Chunkedによるアップロード済みファイルの確認</h2>
+    <button id="listFilesBtnForChunked">一覧取得</button>
+    <pre id="filesListForChunked"></pre>
+
+    <hr />
+
+    <!-- CHUNKED: 受信転送デモ -->
+    <h2>チャンク転送受信デモ</h2>
+    <button id="startReceiveBtnForChunked">受信開始</button>
+    <pre id="chunkedReceiveOutput"></pre>
+
+    <hr />
+
+    <!-- SSE: 再接続デモ -->
+    <h2>SSE（再接続対応）デモ</h2>
+    <button id="startReceiveBtnForSse">受信開始</button>
+    <pre id="sseReceiveOutput"></pre>
+
+    <hr />
+
+    <!-- Range: バイナリ形式デモ -->
+    <h2>Range ヘッダデモ（バイナリ形式）</h2>
+    <input id="rangeInputForBinary" type="text" value="bytes=0-9" size="20">
+    <button id="rangeRecvBtnForBinary">受信</button>
+    <pre id="rangeResultForBinary"></pre>
+
+    <hr />
+
+    <!-- Range: ファイル形式デモ -->
+    <h2>Range ヘッダデモ（ファイル形式）</h2>
+    <input id="rangeInputForFile" type="text" value="bytes=0-9" size="20">
+    <button id="rangeRecvBtnForFile">受信</button>
+    <pre id="rangeResultForFile"></pre>
+
+    <hr />
+
+</body>
+</html>
