@@ -14,6 +14,7 @@ use App\InitClass\InitForRestApi;
 use App\UnitParameter\ParameterForRestApi;
 use App\ProtocolUnits\ProtocolForRestApi;
 use App\CommandUnits\CommandForRestApi;
+use App\ParallelClass\IParallelClass;
 
 
 /**
@@ -47,14 +48,20 @@ class MainForRestApi extends Console
      * @var array $classes 設定クラス群
      */
     protected array $classes = [
-        'context' => ParameterForRestApi::class,
-        'event'   => CommandForRestApi::class
+        'context'  => ParameterForRestApi::class,
+        'event'    => CommandForRestApi::class,
+        'parallel' => null
     ];
 
     /**
      * @var int $port ポート番号
      */
     protected int $port;
+
+    /**
+     * @var ?IParallelClass $parallel パラレルインターフェースのインスタンス
+     */
+    protected ?IParallelClass $parallel = null;
 
 
     /**
@@ -302,6 +309,13 @@ class MainForRestApi extends Console
             goto finish;   // リッスン失敗
         }
 
+        // パラレルクラスの初期化処理
+        if($this->classes['parallel'] !== null)
+        {
+            $this->parallel = new $this->classes['parallel']($unit_parameter);
+            $this->parallel->initMain();
+        }
+
         $cycle_interval = $cli_parameter['cycle_interval'];
         $alive_interval = $cli_parameter['alive_interval'];
 
@@ -313,6 +327,16 @@ class MainForRestApi extends Console
             if($ret === false)
             {
                 goto finish;
+            }
+
+            // 周期ドリブン（パラレルクラス用）
+            if($this->parallel)
+            {
+                $this->parallel->cycleDriven($cycle_interval, $alive_interval);
+                if($ret === false)
+                {
+                    goto finish;
+                }
             }
         }
 

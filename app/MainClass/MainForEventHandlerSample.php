@@ -9,6 +9,7 @@ namespace App\MainClass;
 
 use App\ContextClass\ContextForSample;
 use App\EventClass\EventHandlerSample;
+use App\ParallelClass\ParallelForSimpleSocket;
 
 
 /**
@@ -42,8 +43,9 @@ class MainForEventHandlerSample extends MainForRestApi
      * @var array $classes 設定クラス群
      */
     protected array $classes = [
-        'context' => ContextForSample::class,
-        'event'   => EventHandlerSample::class
+        'context'  => ContextForSample::class,
+        'event'    => EventHandlerSample::class,
+        'parallel' => ParallelForSimpleSocket::class
     ];
 
     /**
