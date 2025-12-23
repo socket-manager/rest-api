@@ -43,7 +43,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "socket-manager/library": "~1.21.0",
+        "socket-manager/library": "~1.22.0",
         "laminas/laminas-diactoros": "^3.8"
     },
     "repositories": {
