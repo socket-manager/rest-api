@@ -21,7 +21,6 @@ class EventHandlerSample extends CommandForHandler
      * ユーザー情報取得
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getUsers(ContextForSample $p_param)
     {
@@ -53,7 +52,6 @@ class EventHandlerSample extends CommandForHandler
      * 新規ユーザー作成
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function postUser(ContextForSample $p_param)
     {
@@ -70,7 +68,6 @@ class EventHandlerSample extends CommandForHandler
      * ユーザー全体更新
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function putUser(ContextForSample $p_param)
     {
@@ -146,7 +143,6 @@ class EventHandlerSample extends CommandForHandler
      * ユーザー部分更新
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function patchUser(ContextForSample $p_param)
     {
@@ -224,7 +220,6 @@ class EventHandlerSample extends CommandForHandler
      * ユーザー削除
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function deleteUser(ContextForSample $p_param)
     {
@@ -274,7 +269,6 @@ class EventHandlerSample extends CommandForHandler
      * ICOファイルの取得
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getIco(ContextForSample $p_param)
     {
@@ -288,7 +282,6 @@ class EventHandlerSample extends CommandForHandler
      * HTMLファイルの取得
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getHtml(ContextForSample $p_param)
     {
@@ -301,7 +294,6 @@ class EventHandlerSample extends CommandForHandler
      * Javascriptファイルの取得
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getJavascript(ContextForSample $p_param)
     {
@@ -315,7 +307,6 @@ class EventHandlerSample extends CommandForHandler
      * CSSファイルの取得
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getCss(ContextForSample $p_param)
     {
@@ -329,7 +320,6 @@ class EventHandlerSample extends CommandForHandler
      * ファイルアップロード（multipart）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function fileUploadByMultipart(ContextForSample $p_param)
     {
@@ -350,7 +340,6 @@ class EventHandlerSample extends CommandForHandler
      * アップロードファイル情報の取得（multipart）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getFilesByMultipart(ContextForSample $p_param)
     {
@@ -363,7 +352,6 @@ class EventHandlerSample extends CommandForHandler
      * アップロードファイルの取得（multipart）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getFileByMultipart(ContextForSample $p_param)
     {
@@ -380,7 +368,6 @@ class EventHandlerSample extends CommandForHandler
      * ファイルダウンロード（multipart）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function downloadFileByMultipart(ContextForSample $p_param)
     {
@@ -398,7 +385,6 @@ class EventHandlerSample extends CommandForHandler
      * ファイルアップロード（chunked）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function fileUploadByChunked(ContextForSample $p_param)
     {
@@ -416,7 +402,6 @@ class EventHandlerSample extends CommandForHandler
      * アップロードファイル情報の取得（chunked）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getFilesByChunked(ContextForSample $p_param)
     {
@@ -429,7 +414,6 @@ class EventHandlerSample extends CommandForHandler
      * アップロードファイルの取得（chunked）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getFileByChunked(ContextForSample $p_param)
     {
@@ -446,7 +430,6 @@ class EventHandlerSample extends CommandForHandler
      * ファイルダウンロード（chunked）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function downloadFileByChunked(ContextForSample $p_param)
     {
@@ -464,7 +447,6 @@ class EventHandlerSample extends CommandForHandler
      * チャンク転送ストリーム（chunked）
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getStreamByChunked(ContextForSample $p_param)
     {
@@ -488,7 +470,6 @@ class EventHandlerSample extends CommandForHandler
      * SSE転送ストリーム
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function getStreamBySse(ContextForSample $p_param)
     {
@@ -518,6 +499,7 @@ class EventHandlerSample extends CommandForHandler
     /**
      * Range指定のデータ取得（バイナリ形式）
      * 
+     * @param ContextForSample $p_param コンテキストパラメータ
      */
     protected function getBinaryByRange(ContextForSample $p_param)
     {
@@ -527,6 +509,7 @@ class EventHandlerSample extends CommandForHandler
     /**
      * Range指定のデータ取得（ファイル形式）
      * 
+     * @param ContextForSample $p_param コンテキストパラメータ
      */
     protected function getFileByRange(ContextForSample $p_param)
     {
@@ -537,7 +520,6 @@ class EventHandlerSample extends CommandForHandler
      * Expectヘッダ受信
      * 
      * @param ContextForSample $p_param コンテキストパラメータ
-     * @return ?string 遷移先のステータス名
      */
     protected function expectHeader(ContextForSample $p_param)
     {
