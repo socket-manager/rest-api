@@ -171,6 +171,40 @@ class MainForRestApi extends Console
         }
         $ins_command = new $class_command();
 
+        /**
+         * ルーティングのパース
+         */
+        $flat_routing = [];
+        foreach($conf_routing['routes'] as $route)
+        {
+            // グループ形式
+            if(isset($route['group']))
+            {
+                $prefix = $route['uri'];
+                foreach($route['group'] as $child)
+                {
+                    $flat_routing[] = [
+                        'prefix' => $prefix,
+                        'method' => $child['method'],
+                        'uri'    => $child['uri'],
+                        'event'  => $child['event'],
+                    ];
+                }
+            }
+
+            // 単独ルート
+            else
+            {
+                $flat_routing[] = [
+                    'prefix' => '',
+                    'method' => $route['method'],
+                    'uri'    => $route['uri'],
+                    'event'  => $route['event'],
+                ];
+            }
+        }
+        $conf_routing['routes'] = $flat_routing;
+
         $queues = [];
         foreach($conf_routing['routes'] as $route)
         {

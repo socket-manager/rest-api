@@ -76,6 +76,7 @@ class InitForRestApi implements IInitSocketManager
         if($p_routing === [])
         {
             $this->routing['routes'] = [];
+            $this->routing['expect'] = null;
             $this->routing['mismatch'] = null;
         }
         $this->parsers = $p_parsers;
@@ -159,14 +160,16 @@ class InitForRestApi implements IInitSocketManager
                     continue;
                 }
 
-                $uri = trim($route['uri'], '/');
+                $base_uri = trim($route['uri'], '/');
+                $uri = trim($route['prefix'] . $route['uri'], '/');
 
                 /**
                  * URI 全体正規表現ルート
                  */
-                if(preg_match('/^:(.+):$/', $uri, $m))
+                if(preg_match('/^:(.+):$/', $base_uri, $m))
                 {
                     $regex = $m[1];
+                    $regex = $route['prefix'] . $regex;
                     $regex = trim($regex, '/');
 
                     $regex = str_replace('/', '\\/', $regex);
