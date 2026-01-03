@@ -193,6 +193,10 @@ class InitForRestApi implements IInitSocketManager
                             if(stripos($content_type, $type) !== false)
                             {
                                 $method_name = $parser->selector($p_param->request(), $this->request->getUri()->getPath());
+                                if(!isset($method_name))
+                                {
+                                    $method_name = 'normal';
+                                }
                                 $parsed_body = $parser->$method_name($this->request->getBody()->__toString());
                                 $this->request = $this->request->withParsedBody($parsed_body);
                                 $p_param->setTempBuff(['__req-ins' => $this->request]);
@@ -298,6 +302,10 @@ class InitForRestApi implements IInitSocketManager
                         if(stripos($content_type, $type) !== false)
                         {
                             $method_name = $parser->selector($p_param->request(), $this->request->getUri()->getPath());
+                            if(!isset($method_name))
+                            {
+                                $method_name = 'normal';
+                            }
                             $parsed_body = $parser->$method_name($this->request->getBody()->__toString());
                             $this->request = $this->request->withParsedBody($parsed_body);
                             $p_param->setTempBuff(['__req-ins' => $this->request]);

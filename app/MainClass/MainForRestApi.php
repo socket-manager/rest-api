@@ -346,7 +346,7 @@ class MainForRestApi extends Console
         // パラレルクラスの初期化処理
         if($this->classes['parallel'] !== null)
         {
-            $this->parallel = new $this->classes['parallel']($unit_parameter);
+            $this->parallel = new $this->classes['parallel']($cli_parameter, $unit_parameter);
             $this->parallel->initMain();
         }
 

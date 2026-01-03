@@ -27,9 +27,10 @@ class ParallelForSimpleSocket implements IParallelClass
     /**
      * コンストラクタ
      * 
+     * @param ?array $p_conf_param 基本パラメータ
      * @param ContextForSample $p_context コンテキストクラスのインスタンス
      */
-    public function __construct($p_context)
+    public function __construct(?array $p_conf_param, $p_context)
     {
         $this->context = $p_context;
     }
@@ -51,7 +52,7 @@ class ParallelForSimpleSocket implements IParallelClass
             $send_data =
             [
                 [
-                    'service' => 'minecraft-parent',
+                    'service' => 'rest-api-sample',
                     'type' => 'user-cnt',
                     'data' => $all_cnt
                 ]
