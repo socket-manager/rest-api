@@ -45,7 +45,10 @@ class <%= name %> extends MainForRestApi
     ];
 
     /**
-     * @var \Closure|string|null $log_writer ログライター
+     * ログライター
+     *
+     * @param string $p_level ログレベル
+     * @param array $p_param ログ内容（['Json data' => $json] など）
      */
     public function logWriter(string $p_level, array $p_param)
     {
