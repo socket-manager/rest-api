@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'identifer' => 'server-name',
     'description' => 'サーバーの説明',
     'setting_cors' => "'cors'",
     'setting_parameter' => 'null',

@@ -18,7 +18,7 @@ class <%= name %> extends MainForRestApi
     /**
      * @var string $identifer サーバー識別子
      */
-    protected string $identifer = 'app:<%= identifer %> {port?} {keep_alive?}';
+    protected string $identifer = 'app:<%= name %> {port?} {keep_alive?}';
 
     /**
      * @var string $description コマンド説明
