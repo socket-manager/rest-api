@@ -114,7 +114,7 @@ class EventHandlerSample extends CommandForHandler
             // レスポンスデータがない（ユーザーIDが存在しない）場合
             if($put_user === null)
             {
-                $error_param = 'id';
+                $error_param[] = 'id';
                 break;
             }
 
