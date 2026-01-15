@@ -25,6 +25,9 @@ OAuth2 などの PSR-7 対応認証モジュールとも連携可能です。
 PSR-7 公式仕様：  
 https://www.php-fig.org/psr/psr-7/
 
+PSR-7 ラッパーの詳細な使い方はこちら：  
+https://socket-manager.github.io/document/rest-api/psr7.html
+
 ## SOCKET-MANAGER Framework 製  
 SOCKET-MANAGER Framework が持つビルトインのステートマシンにより、  
 REST-API / RESTful-API の実装方式を柔軟に選択できます。
@@ -90,6 +93,16 @@ REST-API / RESTful-API の動作確認ができるサンプルを同梱してい
 ## SSE（再接続対応）デモ  
 
 ## Rangeヘッダを使った分割送信デモ
+
+---
+
+# 【 ドキュメント 】
+本 README では概要とサンプルを中心に紹介しています。  
+実装方式（イベントハンドラ型 / ステートマシン型）、PSR-7 ラッパー、ルーティング、Chunked / SSE / Range 送信などの詳細仕様は  
+以下の公式ドキュメントにまとめています。
+
+REST-API サーバー開発環境ドキュメント：  
+https://socket-manager.github.io/document/rest-api/
 
 ---
 
